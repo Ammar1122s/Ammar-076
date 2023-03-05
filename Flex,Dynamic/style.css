@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    background-color: blue;
+    flex-wrap: wrap;
+    
+}
+.subdiv{
+  background-color: aqua;
+  flex: 25%;
+  overflow: hidden;
+  padding: 0px 5px;
+}
+
+@media (max-width:800px) {
+    .subdiv{
+        flex: 50%;
+    }
+    
+}
