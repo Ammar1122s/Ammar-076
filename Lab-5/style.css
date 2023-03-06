@@ -1,0 +1,87 @@
+.main{
+    margin-top: 50px;
+}
+.button{
+    margin-top: 50px;
+    margin-left: 90px;
+    border-radius: 10px;
+   background-color: aqua;
+   width: 100px;
+   height: 40px;
+}
+.email1{
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+.pass1{
+    border-radius: 10px;
+    padding: 10px;
+}
+.email2{
+    border-radius: 10px;
+    padding: 10px;
+    border: 5px solid red;
+
+}
+
+.button:hover{
+    background-color: blue;
+}
+
+nav > ul >li{
+    display: inline;
+    margin: 20px;
+    padding: 10px;
+    background-color:cadetblue;
+    border-radius: 10px;
+}
+
+nav > ul >li >a{
+    text-decoration: none;
+    color: black;
+}
+nav{
+    background-color: aqua;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    margin-bottom: 200px;
+}
+
+.sub-tag{
+    display: block;
+    background-color: blue;
+    margin-left: -25px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.sub-tag>a{
+    text-decoration: none;
+    color: white;
+}
+
+.sub-tag-div{
+    margin-top: 20px;
+    position: absolute;
+    background-color: darkgray;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-left: 18px;
+    width: 70px;
+    height: 120px;
+    border-radius: 10px;
+   
+}
+
+
+.hover-home:hover .sub-tag-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hover-home{
+    position: relative;
+}
