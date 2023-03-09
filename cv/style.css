@@ -1,0 +1,85 @@
+@font-face {
+    font-family: dosis;
+    src: url(./fonts/Dosis/Dosis-VariableFont_wght.ttf);
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: dosis;
+}
+.container{
+    display: flex;
+    margin: 50px;
+    background-color:#fff;
+    width: 950px;
+    height: 1000px;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 50px 75px rgba(0, 0, 0, 0.1);
+}
+.left-side{
+    height: 990;
+    width: 25%;
+    /* background-color: beige; */
+    padding: 20px;
+}
+
+.right-side{
+    height: 100% ;
+    width: 75%;
+    /* background-color:aqua; */
+    margin-left: 10px;
+}
+.img{
+    height: 140px;
+    width: 140px;
+    border-radius: 80px;
+}
+
+.name{
+    font-size: 40px;
+}
+i{
+    margin-top: 12px;
+}
+.education{
+    margin-top: 30px;
+    /* background-color: blue; */
+}
+.ed{
+    color:cyan;
+    font-weight: bold;
+}
+.inner{
+    font-weight: bold;
+}
+
+.con{
+    border-left: 4px solid aqua;
+    padding: 0px 10px;
+}
+ul{
+    list-style-type: none;
+}
+ul li{
+    margin-left: -30px;
+    margin-top: 20px;
+}
+
+.percent{
+    position: relative;
+    width: 100%;
+    background:#e3e3e3;;
+    height: 5px;
+    margin-top: 10px;
+}
+
+.percent div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #3590d2;
+}
