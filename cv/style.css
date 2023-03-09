@@ -29,24 +29,49 @@ body{
 .right-side{
     height: 100% ;
     width: 75%;
-    /* background-color:aqua; */
     margin-left: 10px;
 }
 .img{
-    height: 140px;
-    width: 140px;
+    height: 160px;
+    width: 160px;
     border-radius: 80px;
+
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-delay: 0.1s;
+}
+
+.img:hover{
+    transform: translateY(-10px);
+    height: 180px;
+    width: 180px;
+    border-radius: 100px;
 }
 
 .name{
     font-size: 40px;
+
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-delay: 0.1s;
 }
+ .name:hover{
+    transform: translateY(-10px);
+    font-size: 45px;
+ }
+
 i{
     margin-top: 12px;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-delay: 0.1s;
+}
+i:hover{
+    transform: translateY(-10px);
+
 }
 .education{
     margin-top: 30px;
-    /* background-color: blue; */
 }
 .ed{
     color:cyan;
@@ -83,3 +108,26 @@ ul li{
     height: 100%;
     background: #3590d2;
 }
+
+
+.pro{
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-delay: 0.1s;
+}
+
+ .pro:hover{
+    transform: translateY(-10px);
+    font-size: 18px;
+ }
+
+ .contact-info span{
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-delay: 0.1s;
+ }
+ .contact-info span:hover{
+    transform: translateY(-10px);
+    font-size: 18px;
+ }
+
