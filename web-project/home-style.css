@@ -1,0 +1,140 @@
+@font-face {
+    font-family: tilt-Neon;
+    src: url("./fonts/Tilt_Neon/TiltNeon-Regular-VariableFont_XROT\,YROT.ttf");
+}
+body{
+    font-family: tilt-Neon;
+}
+.nav{
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.06);
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.nav-bar{
+    padding: 10px 80px;
+    margin-top: -7px;
+    height: 70px;
+}
+.menu{
+    margin: 0px 10px;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-delay: 0.1s;
+}
+
+.menu a:hover,
+.menu a.active1{
+    color: aqua;
+    border-bottom: 2px solid aqua;
+    border-radius: 1px;
+
+}
+.hero-style{
+    background-image: url("./img/hero4.png");
+    width: 100%;
+    height: 90vh;
+    background-position: top 25% right 0%;
+    background-size: cover;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 120px;
+    margin-top: 80px;
+}
+.hero-style h2{
+    font-size: 45px;
+}
+.hero-style h1{
+    font-size: 65px;
+    color: #088178;
+}
+
+.hero-style button{
+    background-image: url("./img/button.png");
+    border: 0px;
+    background-color: transparent;
+    padding: 14px 60px 14px 55px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    color:#088178 ;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ft{
+    display: flex;
+    width: 170px;
+    height: 190px;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 30px;
+    box-shadow: 0px 5px 35px rgba(0,0,0,0.1);
+    border: 1px solid white;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.ft p{
+    margin-top: 10px;
+    background-color: #088178;
+    color: white;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.feathers{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.product-sec{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 200px;
+}
+
+.product-sec h1{
+    font-size: 60px;
+}
+.product-sec>p{
+    color: #088178;
+}
+
+.product{
+    display: flex;
+    width: 260px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    flex-direction: column;
+}
+
+
+.product img{
+    margin-top: 10px;
+    width: 240px;
+    height: 220px;
+    border-radius: 10px;
+    align-self: center;
+}
+.product p{
+    color: grey;
+    font-size: 12px;
+    margin-left:10px;
+    margin-top: 5px;
+}
+.des{
+    font-size: 40px;
+}
