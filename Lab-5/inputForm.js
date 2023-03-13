@@ -14,6 +14,10 @@ function check(){
         passCheck.classList.remove("pass1");
         passCheck.classList.add("email2");
     }
+
+    if(passCheck.value && passCheck.value){
+        alert("Login!")
+    }
 }
 
 
