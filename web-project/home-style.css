@@ -101,7 +101,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 80px;
 }
 
 .product-sec h1 {
@@ -245,7 +244,40 @@ body {
     background-color: #6cbbb6;
 }
 
-.new-pro{
+/* .new-pro{
     margin-bottom: 200px;
     
+} */
+
+.banner2{
+  display: flex;
+  margin-top: 60px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 80px;
+}
+
+.b1{
+  margin: 0px 20px;
+  background-image: url("/img/banner/b17.jpg");
+  width: 550px;
+  height: 320px;
+  /* align-items: center; */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 50px;
+}
+.b1 span{
+  color: white;
+}
+.b1 .p2{
+  font-size: 30px;
+}
+
+.b1 .p1{
+  font-size: 20px;
+  font-weight: lighter;
 }

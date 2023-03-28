@@ -1,0 +1,17 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.form-add{
+    display: none;
+}
+.form-add1{
+    margin-top: 50px;
+    width:500px;
+    display: block;
+}
+
