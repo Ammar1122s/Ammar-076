@@ -257,18 +257,50 @@ body {
   justify-content: center;
   flex-direction: row;
   margin-bottom: 80px;
+  flex-wrap: wrap;
 }
 
 .b1{
-  margin: 0px 20px;
+  margin: 20px;
   background-image: url("/img/banner/b17.jpg");
   width: 550px;
   height: 320px;
-  /* align-items: center; */
   justify-content: center;
   display: flex;
   flex-direction: column;
   padding: 0px 50px;
+}
+
+.b2{
+  background-image: url("/img/banner/b10.jpg");
+}
+.b3{
+  background-image: url("img/banner/b18.jpg");
+  background-size: cover;
+  width: 360px;
+  height: 200px;
+}
+.b3 .p2{
+  color: red;
+}
+.b4{
+  background-image: url("img/banner/b16.jpg");
+  background-size: cover;
+  background-position: 50% 10%;
+  width: 360px;
+  height: 200px;
+}
+.b4 .p2{
+  color: red;
+}
+.b5{
+  background-image: url("img/banner/b7.jpg");
+  background-size: cover;
+  width: 360px;
+  height: 200px;
+}
+.b5 .p2{
+  color: red;
 }
 .b1 span{
   color: white;
@@ -280,4 +312,29 @@ body {
 .b1 .p1{
   font-size: 20px;
   font-weight: lighter;
+}
+
+.b1 .button{
+  margin-top: 20px;
+  width: 100px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.b1 .button a{
+  text-decoration: none;
+  color: white;
+}
+
+.b1:hover .button{
+  background-color: #088178;
+  border: none;
+}
+
+.footer-col{
+  background-color: black;
 }
