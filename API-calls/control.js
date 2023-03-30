@@ -7,13 +7,15 @@ $("#add-btn").on("click",clicked)
 function clicked(){
     $.ajax({
         type: "GET",
-        url: "https://dummyjson.com/products/1",
+        url: "https://dummyjson.com/products",
         success: function (response) {
             console.log(response)   
-            $("#form-add").addClass("form-add1");
-            $("#id").append(response.id);
-            $("#title").append(response.title);
-            $("#des").append(response.description);
+            response.products.map((re)=>{
+
+                $(".parent1").append(" <div class='parent'> <p>Id: " + re.id + " </p> <p>Title: " + re.title + "  </p> <img class='tumb' src='" + re.thumbnail
+                 + " ' alt=''> </div>");
+
+            })
         }
     });
 

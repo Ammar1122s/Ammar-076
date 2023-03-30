@@ -15,3 +15,28 @@
     display: block;
 }
 
+.parent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 300px;
+    border: 2px solid black;
+    margin-top: 20px;
+    padding: 0px, 20px;
+  
+}
+.parent1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tumb{
+    width: 300px;
+    height: 200px;
+}
