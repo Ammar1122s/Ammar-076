@@ -1,0 +1,97 @@
+.mian{
+    padding: 0px;
+    margin: 0px;
+}
+.nav-bar{
+    position: relative;
+    
+}
+
+.nav-con{
+    padding-left: 230px;
+  
+}
+.nav{
+    margin-top: -40px;
+}
+.logo{
+    display: flex;
+    background-color:black;
+    width: 150px;
+    height: 140px;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+}
+
+.nav-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 40px;
+    background-color: black;
+    margin-left: 30px;
+}
+
+.nav-btn span{
+    color: goldenrod;
+    font-weight: bold;
+}
+
+.content{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 800px;
+    height: 100px;
+    background-color:black;
+    opacity: 0.6;
+    margin-left: 220px;
+    top: -100px;
+    z-index: 9;
+    padding-top: 10px;
+}
+.slider{
+    top: -50px;
+    position: relative;
+}
+
+.inner-cnt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    height: 80px;
+    border-right: 2px solid gold;
+}
+
+.span-2{
+    color: gold;
+    margin: 10px 0px;
+}
+
+
+.span-1{
+    color: white;
+    font-size: 26px;
+}
+
+
+.btn-book{
+    position: relative;
+    top: -200px;
+    width: 250px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: goldenrod;
+    z-index: 9;
+    margin-left: 1000px;
+}
+.btn-book span{
+    color: white;
+    font-size: 26px;
+}
