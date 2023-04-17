@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    $("#btn").click(function(){
-      alert("The paragraph was clicked.");
+    $("#btn-logo").click(function(){
+      alert("FA20-BCS-076");
     });
   });

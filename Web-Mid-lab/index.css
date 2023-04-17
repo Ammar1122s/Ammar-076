@@ -1,0 +1,219 @@
+.main{
+    padding: 0px;
+    margin: 0px;
+}
+.nav{
+    position: fixed;
+    width: 100%;
+    margin-top: -5%;
+    margin-left: 5px;
+}
+.logo{
+    margin-left: 300px;
+}
+
+.side{
+    padding-left: 370px;
+}
+
+.slide{
+   background-image: url("./asserts/1.png");
+   margin-top: 5%;
+    width: 100%;
+   height: 70vh;
+   background-position: top 25% left 15%;
+   background-size: cover;
+   display: flex;
+   /* justify-content: center; */
+   align-items: center;
+}
+
+.slide span{
+    font-weight: bold;
+}
+
+.slide-btn{
+    width: 250px;
+    height: 30px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 13%;
+    margin-left: 10%;
+}
+.slide-btn1{
+    width: 250px;
+    height: 35px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 13%;
+    margin-left: 1%;
+}
+
+.div1{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 5px;
+    height: 600px;
+}
+
+.div1 img{
+    margin-left: 3px;
+}
+
+.div1-btn{
+    width: 150px;
+    height: 35px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -16%;
+    left: 35%;
+}
+
+.div2{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 5px;
+    height: 600px;
+}
+
+.div2 img{
+    margin-left: 3px;
+}
+
+.div2-btn{
+    width: 150px;
+    height: 35px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -16%;
+    left: 45%;
+}
+
+.seller{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.span1{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.span2{
+    font-weight: bold;
+    color: burlywood;
+    margin-top: 15px;
+}
+
+.view{
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;
+  
+}
+
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.scrollmenu::-webkit-scrollbar {
+    display: none;
+  }
+  
+  div.scrollmenu div {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  div.scrollmenu a:hover {
+    background-color: #777;
+  }
+
+  .img-badge{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .img-badge img{
+    width: 300px;
+    height: 300px;
+  }
+
+  .ending{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 50px;
+    flex-direction: column;
+   
+  }
+
+  .email{
+    margin-top: 20px;
+  }
+
+  .sub-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 40px;
+    background-color: black;
+    margin-top: -35px;
+  }
+
+  .sub-btn span{
+    color: white;
+    font-weight: bold;
+  }
+
+  .items{
+    margin-top: 30px;
+  }
+
+  .items a{
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  .com{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+  }
+
+
+
+
+
+
+
+
+
+  
