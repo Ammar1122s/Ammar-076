@@ -1,0 +1,65 @@
+
+
+<div class="top">
+    <span>#stayhome</span>
+    
+</div>
+
+
+    <div class="products-part">
+
+        <% record.forEach(e=> { %>
+          <div class="product">
+            <img src="<%- e.path %>" alt="">
+            <div class="product-body">
+              <p>alibaba</p>
+              <p id="des"><%- e.name %></p>
+              <div class="stars">
+                <ul>
+                  <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                </ul>
+              </div>
+              <p id="price">$<%-e.price %></p>
+              <div class="shop">
+                <a href=""><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+              </div>
+            </div>
+          </div>
+  
+  
+  
+          <% }); %>
+
+          <% new_pro.forEach(e=> { %>
+            <div class="product">
+              <img src="<%- e.path %>" alt="">
+              <div class="product-body">
+                <p>alibaba</p>
+                <p id="des"><%- e.name %></p>
+                <div class="stars">
+                  <ul>
+                    <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                  </ul>
+                </div>
+                <p id="price">$<%-e.price %></p>
+                <div class="shop">
+                  <a href=""><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                </div>
+              </div>
+            </div>
+    
+    
+    
+            <% }); %>
+  
+  
+  
+      </div>

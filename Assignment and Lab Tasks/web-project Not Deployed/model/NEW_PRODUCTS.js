@@ -3,9 +3,10 @@ const mongoose = require("mongoose");
 let productsSchema = mongoose.Schema({
     name:String,
     price:Number,
-    Details:String
+    Details:String,
+    path:String
 })
 
-let Model = mongoose.model("Product",productsSchema);
+let Model = mongoose.model("New-product",productsSchema);
 
 module.exports = Model;

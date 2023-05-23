@@ -1,0 +1,18 @@
+.top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    border: 2px solid black;
+    height: 100px;
+    width: "100%";
+    background-image: url("/img/banner/b1.jpg");
+    height: 40vh;
+}
+
+.top span{
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+}
+
