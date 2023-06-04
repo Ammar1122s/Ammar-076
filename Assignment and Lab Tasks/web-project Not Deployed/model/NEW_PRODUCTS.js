@@ -9,4 +9,5 @@ let productsSchema = mongoose.Schema({
 
 let Model = mongoose.model("New-product",productsSchema);
 
+
 module.exports = Model;

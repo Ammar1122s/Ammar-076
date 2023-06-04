@@ -15,9 +15,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="home-style.css">
     <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="signup.css">
     <script src="navigation.js"></script>
+    <script src="login.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
+  <% let  active %>
     <div class="main" id="main">
     <div>
         <nav class="nav navbar navbar-expand-lg bg-body-tertiary">
@@ -33,19 +39,39 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item menu">
-                  <a class="nav-link active1" href="/">Home</a>
+                  <% nav=="home" ? active="active1" :null %>
+                  <a class="nav-link <%=active %> "  href="/">Home</a>
                 </li>
                 <li class="nav-item menu">
                   <a class="nav-link" href="/shop">Shop</a>
                 </li>
-                <li class="nav-item menu">
-                  <a class="nav-link" href="/login">Login</a>
+                <% if (!user) { %>
+                  <li class="nav-item menu">
+                    <% nav=="login" ? active="active1" : active=null %>
+                  <a class="nav-link <%=active %>"  href="/login">Login</a>
                 </li>
                 <li class="nav-item menu">
-                  <a class="nav-link" href="/signup">Sign up</a>
+                  <% nav=="signup" ? active="active1" :active=null %>
+                  <a class="nav-link <%=active %> "  href="/signup">Signup</a>
+                </li>
+
+
+               <% }
+
+               else{%>
+                <li class="nav-item menu">
+                  <a class="nav-link" href="/profile">Profile</a>
                 </li>
                 <li class="nav-item menu">
-                  <a id="blog" class="nav-link" href="#">Blog</a>
+                  <a class="nav-link" href="/logout">Logout</a>
+                </li>
+
+              <% }%>
+               
+                
+                <li class="nav-item menu">
+                  <% nav=="blog" ? active="active1" :active=null %>
+                  <a class="nav-link <%=active %> "  href="#">Blog</a>
                 </li>
                 <li class="nav-item menu">
                   <a class="nav-link menu" href="#">About</a>
@@ -68,7 +94,12 @@
      
     </div>
     <div>
-        <%-body %>
+      <% if (flash) { %>
+          <div style="top: 12%; width: 60%; left: 20%; position: absolute;" class="alert alert-<%-flash.type%>">
+            <%= flash.message %>
+          </div>
+        <% } %>
+        <%- body %>
     </div>
     <footer class="text-center text-lg-start bg-white text-muted">
       <!-- Section: Social media -->
@@ -191,7 +222,7 @@
       </div>
       <!-- Copyright -->
     </footer>
-    <!-- Footer -->
+    
     
 </body>
 </html>

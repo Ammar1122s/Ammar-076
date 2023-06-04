@@ -10,6 +10,7 @@ const router = express.Router();
 router.get("/", async function (req, res) {
     let record = await Products.find();
     let new_pro = await New_pro.find();
+    req.setNav("home");
     //console.log(record)
     res.render("home1",{record:record,new_pro:new_pro});
   });
@@ -19,7 +20,17 @@ router.get("/", async function (req, res) {
     res.send(record);
   });
 
-
+// function onClick(e){
+//   $.ajax({
+//     type: "GET",
+//     url: "/api/products/"+e,
+//     data: "data",
+//     dataType: "dataType",
+//     success: function (response) {
+      
+//     }
+//   });
+// }
 
   
 module.exports = router;
