@@ -21,13 +21,6 @@ router.post("/login", async (req, res) => {
 });
 
 
-// function isValidEmail(email) {
-//   // Regular expression pattern for email validation
-//   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  
-//   return emailPattern.test(email);
-// }
-
 router.post("/signup",async(req,res) =>{
 
   let userObj = req.body;
@@ -52,6 +45,11 @@ router.post("/signup",async(req,res) =>{
 
 })
 
+router.post("/edit",async (req,res) =>{
+  console.log(req.body)
+  res.redirect("profile")
+})
+
 router.get("/logout",(req,res) =>{
   req.setFlash("info","Sucessfully Logout")
   req.session.user = null;
@@ -59,9 +57,15 @@ router.get("/logout",(req,res) =>{
 })
 
 
+
 router.get("/profile",(req,res) =>{
   
   res.render("profile")
+})
+
+router.get("/edit",(req,res) =>{
+  
+  res.render("profile-edit")
 })
 
 

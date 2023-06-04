@@ -64,6 +64,8 @@ server.get("/cart", (req,res)=>{
   res.render("cart")
 })
 
+
+
 server.listen(3000, () => {
   console.log("Server Started, Visit localhost:3000");
 });
@@ -74,3 +76,5 @@ mongoose
   .connect("mongodb://localhost/Ecommerce-Sit", { useNewUrlParser: true })
   .then(() => console.log("Connected to Mongo ...."))
   .catch((error) => console.log(error.message));
+
+

@@ -19,6 +19,10 @@
   <link rel="stylesheet" href="shop.css">
   <link rel="stylesheet" href="login.css">
   <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="profile-edit.css">
+  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="navigation.js"></script>
   <script src="login.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -58,12 +62,13 @@
                     <% nav=="signup" ? active="active1" :active=null %>
                       <a class="nav-link <%=active %> " href="/signup">Signup</a>
                   </li>
+                  <li class="nav-item menu">
+                    <a class="nav-link" href="/profile">Profile</a>
+                  </li>
 
 
                   <% } else{%>
-                    <li class="nav-item menu">
-                      <a class="nav-link" href="/profile">Profile</a>
-                    </li>
+                    
                     <li class="nav-item menu">
                       <a class="nav-link" href="/logout">Logout</a>
                     </li>
