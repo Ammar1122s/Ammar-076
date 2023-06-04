@@ -20,15 +20,36 @@ router.post("/login", async (req, res) => {
   }
 });
 
+
+// function isValidEmail(email) {
+//   // Regular expression pattern for email validation
+//   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+//   return emailPattern.test(email);
+// }
+
 router.post("/signup",async(req,res) =>{
 
   let userObj = req.body;
+
+  if(userObj.name.length == 0){
+    req.setFlash("danger","Please enter the Name!")
+    res.redirect("/signup");
+  }
+  else if(userObj.password.length < 6){
+    req.setFlash("danger","Password must be more than 6 characters")
+    res.redirect("/signup");
+  }
+  else{
   const salt = await bcrypt.genSalt(10);
   const hashed = await bcrypt.hash(userObj.password, salt);
   userObj.password = hashed;
   let user = new User(userObj);
   await user.save();
+  req.setFlash("info","Please login to Continue!")
   res.redirect("/login");
+  }
+
 })
 
 router.get("/logout",(req,res) =>{
@@ -40,7 +61,7 @@ router.get("/logout",(req,res) =>{
 
 router.get("/profile",(req,res) =>{
   
-  res.send( req.session.user)
+  res.render("profile")
 })
 
 

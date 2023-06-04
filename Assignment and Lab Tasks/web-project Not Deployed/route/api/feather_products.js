@@ -19,18 +19,5 @@ router.get("/", async function (req, res) {
     let record = await Products.findByIdAndDelete(req.params.id);
     res.send(record);
   });
-
-// function onClick(e){
-//   $.ajax({
-//     type: "GET",
-//     url: "/api/products/"+e,
-//     data: "data",
-//     dataType: "dataType",
-//     success: function (response) {
-      
-//     }
-//   });
-// }
-
   
 module.exports = router;

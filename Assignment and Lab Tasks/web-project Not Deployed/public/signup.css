@@ -5,7 +5,8 @@
     background: url("/img/background.jpg") no-repeat;
     min-height: 100vh;
     background-size: cover;
-    background-position: center ;
+    background-position: center;
+    padding-top: 130px;
 }
 
 .wrapper1{

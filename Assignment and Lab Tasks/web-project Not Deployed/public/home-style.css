@@ -5,6 +5,10 @@
 body {
   font-family: tilt-Neon;
 }
+
+#alertMessage {
+  transition: opacity 2s ease;
+}
 .nav {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.06);
   z-index: 999;
