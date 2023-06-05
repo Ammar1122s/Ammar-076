@@ -16,3 +16,31 @@
     color: white;
 }
 
+.page{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.page .pagination-link{
+    margin-left: 20px;
+    border: 2px solid rgb(115, 66, 66);
+    border-radius: 10px;
+    width: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:black;
+}
+
+.page .pagination-link:hover{
+    background-color: rgb(230, 202, 202);
+}
+
+.page a {
+    text-decoration: none;
+}

@@ -15,13 +15,13 @@
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-  <link rel="stylesheet" href="home-style.css">
-  <link rel="stylesheet" href="shop.css">
-  <link rel="stylesheet" href="login.css">
-  <link rel="stylesheet" href="signup.css">
-  <link rel="stylesheet" href="blog.css">
-  <link rel="stylesheet" href="profile.css">
-  <link rel="stylesheet" href="profile-edit.css">
+  <link rel="stylesheet" href="/home-style.css">
+  <link rel="stylesheet" href="/shop.css">
+  <link rel="stylesheet" href="/login.css">
+  <link rel="stylesheet" href="/signup.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/profile.css">
+  <link rel="stylesheet" href="/profile-edit.css">
   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="navigation.js"></script>
   <script src="login.js"></script>
@@ -62,13 +62,13 @@
                     <% nav=="signup" ? active="active1" :active=null %>
                       <a class="nav-link <%=active %> " href="/signup">Signup</a>
                   </li>
-                  <li class="nav-item menu">
-                    <a class="nav-link" href="/profile">Profile</a>
-                  </li>
+                  
 
 
                   <% } else{%>
-                    
+                    <li class="nav-item menu">
+                      <a class="nav-link" href="/profile">Profile</a>
+                    </li>
                     <li class="nav-item menu">
                       <a class="nav-link" href="/logout">Logout</a>
                     </li>

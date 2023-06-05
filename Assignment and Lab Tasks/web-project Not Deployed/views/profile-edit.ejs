@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/profile-edit.css">
 <div class="main2">
     <div class="wrapper2">
         <div class="form-div">
@@ -25,7 +26,7 @@
                 <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                 <input placeholder="<%= role1  %>" type="text" readonly name="role" value="user" >
             </div>
-            <button class="btn" type="submit">Edit</button>
+           <a href="/edit/<%= user._id %>"></a> <button class="btn">Edit</button>
         </form>
         </div>
     </div>

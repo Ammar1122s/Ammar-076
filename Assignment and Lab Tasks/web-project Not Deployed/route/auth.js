@@ -64,9 +64,37 @@ router.get("/profile",(req,res) =>{
 })
 
 router.get("/edit",(req,res) =>{
-  
-  res.render("profile-edit")
+ res.render("profile-edit")
 })
 
+
+router.post("/edit/:id", async (req,res) =>{
+
+  let userObj = req.body;
+  console.log(userObj)
+
+  if(userObj.name.length == 0){
+    req.setFlash("danger","Please enter the Name!")
+    res.redirect("/profile-edit");
+  }
+  else if(userObj.password.length < 6){
+    req.setFlash("danger","Password must be more than 6 characters")
+    res.redirect("/profile-edit");
+  }
+  else{
+  const salt = await bcrypt.genSalt(10);
+  const hashed = await bcrypt.hash(userObj.password, salt);
+  userObj.password = hashed;
+
+
+  let user = User.findByIdAndUpdate(req.params.id,userObj,{
+    new:true
+  });
+  await user.save();
+  req.setFlash("info","Use info Updated!")
+  res.redirect("/profile");
+  }
+
+})
 
 module.exports = router;

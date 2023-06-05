@@ -17,7 +17,7 @@ server.use(cookieParser());
 server.use(
   session({
     secret: "heheh Secret",
-    cookie: { maxAge: 60000, },
+    cookie: { maxAge: 1000000, },
     resave: true,
     saveUninitialized: true,
   })
@@ -42,7 +42,17 @@ server.get("/shop",async(req,res)=>{
   req.setNav("shop");
   let record = await Products.find();
   let new_pro = await New_pro.find();
-  res.render("shop.ejs",{record:record,new_pro:new_pro})
+  let records = record.concat(new_pro);
+
+  const productsPerPage = 8;
+  const totalPages = Math.ceil(records.length / productsPerPage);
+  const currentPage = parseInt(req.query.page) || 1;
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+
+  const paginatedArray = records.slice(startIndex, endIndex);
+
+  res.render('shop', { record: paginatedArray, currentPage , productsPerPage,totalPages });
 })
 server.get("/login",(req,res)=>{
   req.setNav("login");
