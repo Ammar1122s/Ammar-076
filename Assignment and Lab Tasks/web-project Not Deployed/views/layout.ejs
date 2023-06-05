@@ -49,6 +49,7 @@
                   <% nav=="home" ? active="active1" :null %>
                     <a class="nav-link <%=active %> " href="/">Home</a>
                 </li>
+               
                 <li class="nav-item menu">
                   <% nav=="shop" ? active="active1" : active=null %>
                   <a class="nav-link <%=active %>" href="/shop">Shop</a>
@@ -66,6 +67,14 @@
 
 
                   <% } else{%>
+                    <% 
+                    if(user.role.includes("admin")){ %>
+                      <li class="nav-item menu">
+                      <% nav=="shop" ? active="active1" : active=null %>
+                      <a class="nav-link <%=active %>" href="/admin">Admin</a>
+                    </li>
+                    <%} %>
+                     %>
                     <li class="nav-item menu">
                       <a class="nav-link" href="/profile">Profile</a>
                     </li>

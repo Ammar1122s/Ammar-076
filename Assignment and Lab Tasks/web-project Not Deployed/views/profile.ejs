@@ -14,8 +14,11 @@
 
                 <div class="text-center mt-3">
                     <span class="bg-secondary p-1 px-4 rounded text-white">Pro</span>
-                    <h5 class="mt-2 mb-0">Ammar</h5>
-                    <span>Customer</span>
+                    <h5 class="mt-2 mb-0"><%= user.name %></h5>
+                    <% 
+                    let role1 = user.role.join(", ")
+                     %>
+                    <span><%= role1 %></span>
 
                     <div class="px-4 mt-1">
                         <p class="fonts">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -34,8 +37,8 @@
 
                     <div class="buttons">
 
-                        <a href="/edit"><button id="edit-btn" class="btn btn-outline-primary px-4">Edit</button></a>
-                        <a href="/delete-profile"><button class="btn btn-primary px-4 ms-3">Delete Profile</button></a>
+                        <a href="/profile-edit"><button id="edit-btn" class="btn btn-outline-primary px-4">Edit</button></a>
+                        <a href="/delete-profile/<%= user._id %>"><button class="btn btn-primary px-4 ms-3">Delete Profile</button></a>
                     </div>
 
 

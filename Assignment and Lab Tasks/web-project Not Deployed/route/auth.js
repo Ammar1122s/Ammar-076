@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 let router = express.Router();
 let User = require("../model/USER");
+const sessionAuth = require("../middlewares/sessionAuth");
 
 router.post("/login", async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
@@ -12,7 +13,12 @@ router.post("/login", async (req, res) => {
   const validPassword = await bcrypt.compare(req.body.password, user.password);
   if (validPassword) {
     req.session.user = user;
+    if(user.role.includes("admin")){
+      req.setFlash("success", "Admin login Successfully");
+    }
+    else{
     req.setFlash("success", "Logged in Successfully");
+    }
     return res.redirect("/");
   } else {
     req.setFlash("danger", "Invalid Password");
@@ -24,8 +30,15 @@ router.post("/login", async (req, res) => {
 router.post("/signup",async(req,res) =>{
 
   let userObj = req.body;
+  let all_users = await User.findOne({email:userObj.email});
 
-  if(userObj.name.length == 0){
+    if (all_users) {
+      req.setFlash("danger","Email is already taken!")
+      res.redirect("/signup");
+    }
+
+
+  else if(userObj.name.length == 0){
     req.setFlash("danger","Please enter the Name!")
     res.redirect("/signup");
   }
@@ -50,29 +63,40 @@ router.post("/edit",async (req,res) =>{
   res.redirect("profile")
 })
 
-router.get("/logout",(req,res) =>{
+router.get("/logout", sessionAuth,(req,res) =>{
   req.setFlash("info","Sucessfully Logout")
   req.session.user = null;
-  res.redirect("/login")
+  res.redirect("/login") 
 })
 
 
 
-router.get("/profile",(req,res) =>{
+router.get("/profile", sessionAuth,(req,res) =>{
   
   res.render("profile")
 })
 
-router.get("/edit",(req,res) =>{
- res.render("profile-edit")
+// router.get("/edit/:id",(req,res) =>{
+//  res.render("profile-edit")
+// })
+
+router.get("/profile-edit", (req, res) =>{
+  res.render("profile-edit")
+})
+
+router.get("/delete-profile/:id", async (req, res) =>{
+
+  let done = await  User.findByIdAndDelete(req.params.id)
+  req.session.user = null;
+  res.redirect("/")
 })
 
 
-router.post("/edit/:id", async (req,res) =>{
+
+
+router.post("/profile-edit1/:id", async (req,res) =>{
 
   let userObj = req.body;
-  console.log(userObj)
-
   if(userObj.name.length == 0){
     req.setFlash("danger","Please enter the Name!")
     res.redirect("/profile-edit");
@@ -87,10 +111,10 @@ router.post("/edit/:id", async (req,res) =>{
   userObj.password = hashed;
 
 
-  let user = User.findByIdAndUpdate(req.params.id,userObj,{
+  let user = await User.findByIdAndUpdate(req.params.id,userObj,{
     new:true
   });
-  await user.save();
+  req.session.user= user;
   req.setFlash("info","Use info Updated!")
   res.redirect("/profile");
   }

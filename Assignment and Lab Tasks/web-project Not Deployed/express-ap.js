@@ -17,7 +17,7 @@ server.use(cookieParser());
 server.use(
   session({
     secret: "heheh Secret",
-    cookie: { maxAge: 1000000, },
+    cookie: { maxAge: 1000000000, },
     resave: true,
     saveUninitialized: true,
   })
@@ -32,6 +32,8 @@ server.use(expressLayouts)
 server.use("/", require("./route/api/feather_products"));
 
 server.use("/",require("./route/auth"))
+
+server.use("/",require("./route/athentication"))
 
 server.use("/",require("./route/cart"))
 
