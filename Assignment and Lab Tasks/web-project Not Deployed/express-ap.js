@@ -35,6 +35,8 @@ server.use("/",require("./route/auth"))
 
 server.use("/",require("./route/athentication"))
 
+server.use("/",require("./route/pro_handler"))
+
 server.use("/",require("./route/cart"))
 
 server.set("view engine", "ejs");

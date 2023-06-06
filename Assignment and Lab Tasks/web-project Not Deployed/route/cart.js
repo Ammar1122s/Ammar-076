@@ -26,6 +26,7 @@ router.get("/cart/add-to-cart/:id", (req,res)=>{
     if (!cart) cart = [];
     cart.push(req.params.id);
     res.cookie("cart", cart);
+    req.setFlash("info", "Item is added into the Cart!");
     return res.redirect("back");
   })
   router.get("/deals/remove-from-cart/:id", (req, res) => {

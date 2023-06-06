@@ -6,9 +6,11 @@
 </div>
       <div class="products-part">
         <% record.forEach(e => { %>
+          <a class="product1" href="/product/single/<%= e._id %>">
           <div class="product">
             <img src="<%- e.path %>" alt="">
             <div class="product-body">
+              
               <p>alibaba</p>
               <p id="des"><%- e.name %></p>
               <div class="stars">
@@ -25,7 +27,9 @@
                 <a href="/cart/add-to-cart/<%= e._id %>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
               </div>
             </div>
+          
           </div>
+        </a>
         <% }); %>
 
       </div>
@@ -53,3 +57,9 @@
         
       
       </div>
+
+      <script>
+        function clicked(){
+          console.log(records);
+        }
+      </script>

@@ -1,0 +1,30 @@
+.pro_main{
+    padding-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pro_main .upper_sec{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+.upper_sec div{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.upper_sec div h5{
+    padding-top: 30px;
+}
+
+.upper_sec div a{
+    margin-top: 30px;
+}
+
+.pro_main img{
+    width: 500px;
+    border-radius: 20px;
+}
