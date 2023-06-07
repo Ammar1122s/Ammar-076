@@ -27,4 +27,9 @@
 .pro_main img{
     width: 500px;
     border-radius: 20px;
+    transition: 1s;
+}
+
+.pro_main img:hover{
+    width: 650px;
 }

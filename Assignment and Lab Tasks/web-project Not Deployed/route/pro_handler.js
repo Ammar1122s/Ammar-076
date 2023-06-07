@@ -22,6 +22,7 @@ router.get("/product/single/:id", async (req,res) =>{
         else{
             final = pro;
         }
+        console.log(final);
         res.render("single-pro",{product:final});
     }
    
