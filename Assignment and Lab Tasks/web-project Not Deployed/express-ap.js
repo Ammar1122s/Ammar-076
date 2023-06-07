@@ -5,9 +5,21 @@ const Products = require("./model/FEATHER_PRODUCTS");
 
 const New_pro = require("./model/NEW_PRODUCTS");
 
+const PUBLISHABLE_KEY = "pk_test_51MIyjHCpjwMsS5vLUOihPRGjsFQc25t6hfDohyKpSnH5V0qTSmBbt5kWinkoHcWm1uArr7Q8zY7weg7Q1bLswfey00vDfLKpl2"
+
+const SECRET_KEY = "sk_test_51MIyjHCpjwMsS5vLVQNnsjUYz3f2x4IYK6piN3NuUBM8kmb80DcpB9R4R8vkBOwYSsuLBLDApXvvZI2qzU7JB1cD007OqpDSIU"
+
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
 
+require("dotenv").config()
+
+
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY)
+
+// var stripe = require("stripe");
+
+// server.use(stripe);
 
 server.use(express.static("public"));
 
@@ -86,6 +98,7 @@ server.listen(3000, () => {
 
 const mongoose = require("mongoose");
 const sessionAuth = require("./middlewares/sessionAuth");
+const { default: Stripe } = require("stripe");
 mongoose
   .connect("mongodb://localhost/Ecommerce-Sit", { useNewUrlParser: true })
   .then(() => console.log("Connected to Mongo ...."))

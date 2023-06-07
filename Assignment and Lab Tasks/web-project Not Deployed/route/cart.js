@@ -11,6 +11,11 @@ const New_pro1 = require("../model/NEW_PRODUCTS");
 const ORDER = require("../model/ORDER");
 const { Connection } = require("mongoose");
 
+require("dotenv").config()
+
+
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY)
+
 router.get("/cart", async(req,res)=>{
   req.setNav("cart");
   let cart = req.cookies["cart"];
@@ -77,9 +82,69 @@ router.get("/cart/add-to-cart/:id", (req,res)=>{
     return res.redirect("back");
   });
 
+  
 
-  router.get("/deals/order", sessionAuth, (req, res) => {
-    return res.redirect("back");
+
+
+  router.get("/deals/ordering/:id",  async (req, res) => {
+
+    console.log(req.params.id)
+    let final;
+    try{
+    let pro = await New_pro1.findById(req.params.id);
+   
+
+    if(!pro){
+      let pro2 = await Products1.findById(req.params.id)
+      final = pro2;
+    }
+    else{
+      final= pro;
+    }
+  }
+  catch(e){
+    console.log(e)
+  }
+    const obj = [ {
+      price_data: {
+        currency: "usd",
+        product_data: {
+          name: final.name,
+        },
+        unit_amount: final.price,
+      },
+      quantity: 1,
+
+    } ]
+    console.log(obj)
+
+    let ok;
+
+    try{
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      mode: "payment",
+      line_items:obj.map(o => {
+        return o;
+      }
+        ),
+      success_url: `http://localhost:3000/deals/order/${req.params.id}/Ammar`,
+      cancel_url:`http://localhost:3000/cart`
+    })
+   ok = session.url;
+  }
+  catch(e){
+    console.log(e)
+  }
+   
+
+    res.redirect(ok)
+
+  })
+
+  router.get("/deals/ordering", sessionAuth, async (req, res) => {
+    res.redirect(cart);
+
   })
 
 

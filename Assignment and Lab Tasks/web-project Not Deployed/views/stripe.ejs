@@ -1,0 +1,16 @@
+<div style="margin-top: 80px; margin-bottom: 200px;">
+<h3>Welcome to the Stripe</h3>
+<form action="payment" method="post">
+    <script
+    src="//checkout.stripe.com/v2/chcekout.js"
+    class="stripe-button"
+    data-key="<%= key %>"
+    data-amount="7000"
+    data-currency="usd"
+    data-name="Ammar"
+    data-description="Purchase the Product"
+    data-local="auto"
+    >
+    </script>
+</form>
+</div>

@@ -16,11 +16,11 @@
                     <td><img style="width: 100px;" src="<%= cart_pro[index].path %>" alt=""></td>
                     <td>
                     <% if (!user) {%>
-                        <a href="/deals/order" class="btn btn-info">Order</a>
+                        <a href="/deals/ordering" class="btn btn-info">Order</a>                       
                  <%   }
                  else{
                      %>
-                     <a href="/deals/order/<%= cart_pro[index]._id %>/<%= user.name %>" class="btn btn-info">Order</a>
+                     <a href="/deals/ordering/<%= cart_pro[index]._id %>" class="btn btn-info">Order</a>
                      <%}%>
                      <a href="/deals/remove-from-cart/<%= cart_pro[index]._id %>" class="btn btn-danger">Remove</a>
                         </td>
