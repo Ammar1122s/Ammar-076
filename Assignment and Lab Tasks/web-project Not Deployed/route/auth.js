@@ -4,6 +4,26 @@ let router = express.Router();
 let User = require("../model/USER");
 const sessionAuth = require("../middlewares/sessionAuth");
 
+const gmailCheck = require("../middlewares/gmailCheck")
+
+
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: "757446044695-e4pbt0ag9gkg7le75rodk69vohfiek9q",
+      clientSecret: "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",
+      callbackURL: '/auth/google/callback',
+    },
+    (accessToken, refreshToken, profile, done) => {
+       return done(null, profile);
+    
+    }
+  )
+);
+
 router.post("/login", async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
   if (!user) {
@@ -76,20 +96,17 @@ router.get("/profile", sessionAuth,(req,res) =>{
   res.render("profile")
 })
 
-// router.get("/edit/:id",(req,res) =>{
-//  res.render("profile-edit")
-// })
-
-router.get("/profile-edit", (req, res) =>{
+router.get("/profile-edit",gmailCheck, (req, res) =>{
   res.render("profile-edit")
 })
 
-router.get("/delete-profile/:id", async (req, res) =>{
+router.get("/delete-profile/:id",gmailCheck,  async (req, res) =>{
 
   let done = await  User.findByIdAndDelete(req.params.id)
   req.session.user = null;
   res.redirect("/")
 })
+
 
 
 
@@ -120,5 +137,27 @@ router.post("/profile-edit1/:id", async (req,res) =>{
   }
 
 })
+
+
+
+router.get("/auth/google",passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
+  // Redirect the user after successful authentication
+  
+
+let userObj={
+  _id:req.user.id,
+  name:req.user.displayName,
+  email:req.user.emails[0].value,
+  role:["user","gmailLogin"]
+}
+req.session.user = userObj;
+req.setFlash("success", "Gmail Login Successfully");
+
+console.log(userObj)
+
+  res.redirect("http://localhost:3000");
+});
 
 module.exports = router;

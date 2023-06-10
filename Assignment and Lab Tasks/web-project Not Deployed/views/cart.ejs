@@ -20,7 +20,7 @@
                  <%   }
                  else{
                      %>
-                     <a href="/deals/ordering/<%= cart_pro[index]._id %>" class="btn btn-info">Order</a>
+                     <a href="/deals/ordering/<%= cart_pro[index]._id%>/<%=user._id %>" class="btn btn-info">Order</a>
                      <%}%>
                      <a href="/deals/remove-from-cart/<%= cart_pro[index]._id %>" class="btn btn-danger">Remove</a>
                         </td>

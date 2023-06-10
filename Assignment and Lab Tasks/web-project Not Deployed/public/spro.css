@@ -12,7 +12,7 @@
     flex-direction: row;
 }
 .upper_sec div{
-    padding-left: 20px;
+    padding-left: 80px;
     padding-top: 20px;
 }
 
@@ -27,9 +27,15 @@
 .pro_main img{
     width: 500px;
     border-radius: 20px;
-    transition: 1s;
+    transition: 1.5s;
 }
 
 .pro_main img:hover{
     width: 650px;
+   
 }
+
+/* .pro_main img:hover + .upper_sec div{
+    padding-left: 50px;
+    border: 2px solid black;
+} */

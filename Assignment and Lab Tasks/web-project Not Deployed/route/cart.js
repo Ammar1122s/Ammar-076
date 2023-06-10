@@ -49,7 +49,7 @@ router.get("/cart/add-to-cart/:id", (req,res)=>{
     return res.redirect("back");
   });
 
-  router.get("/deals/order/:id/:name", async(req, res) => {
+  router.get("/deals/order/:id/:id1", async(req, res) => {
 
     let pro = await New_pro1.findById(req.params.id);
     let final;
@@ -66,7 +66,7 @@ router.get("/cart/add-to-cart/:id", (req,res)=>{
       product_id:req.params.id,
       price:final.price,
       path:final.path,
-      orderfor:req.params.name
+      orderfor:req.params.id1
     }
 
     let order = new ORDER(orderObj);
@@ -86,7 +86,7 @@ router.get("/cart/add-to-cart/:id", (req,res)=>{
 
 
 
-  router.get("/deals/ordering/:id",  async (req, res) => {
+  router.get("/deals/ordering/:id/:id1",  async (req, res) => {
 
     console.log(req.params.id)
     let final;
@@ -111,7 +111,7 @@ router.get("/cart/add-to-cart/:id", (req,res)=>{
         product_data: {
           name: final.name,
         },
-        unit_amount: final.price,
+        unit_amount: final.price*100,
       },
       quantity: 1,
 
@@ -128,7 +128,7 @@ router.get("/cart/add-to-cart/:id", (req,res)=>{
         return o;
       }
         ),
-      success_url: `http://localhost:3000/deals/order/${req.params.id}/Ammar`,
+      success_url: `http://localhost:3000/deals/order/${req.params.id}/${req.params.id1}`,
       cancel_url:`http://localhost:3000/cart`
     })
    ok = session.url;
