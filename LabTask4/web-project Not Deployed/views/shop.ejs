@@ -1,0 +1,65 @@
+
+
+<div class="top">
+    <span>#stayhome</span>
+    
+</div>
+      <div class="products-part">
+        <% record.forEach(e => { %>
+          <a class="product1" href="/product/single/<%= e._id %>">
+          <div class="product">
+            <img src="<%- e.path %>" alt="">
+            <div class="product-body">
+              
+              <p>alibaba</p>
+              <p id="des"><%- e.name %></p>
+              <div class="stars">
+                <ul>
+                  <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                </ul>
+              </div>
+              <p id="price">$<%-e.price %></p>
+              <div class="shop">
+                <a href="/cart/add-to-cart/<%= e._id %>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+              </div>
+            </div>
+          
+          </div>
+        </a>
+        <% }); %>
+
+      </div>
+
+
+      <div class="page">
+      
+      
+          <div class="pagination">
+            <%  %>
+        
+            <% if (currentPage > 1) { %>
+              <a href="/shop?page=<%= currentPage - 1 %>" class="pagination-link">&laquo; Prev</a>
+            <% } %>
+        
+            <% for (let i = 1; i <= totalPages; i++) { %>
+              <a href="/shop?page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %> pagination-link"><%= i %></a>
+            <% } %>
+        
+            <% if (currentPage < totalPages) { %>
+              <a href="/shop?page=<%= currentPage + 1 %>" class="pagination-link">Next &raquo;</a>
+            <% } %>
+            
+          </div>
+        
+      
+      </div>
+
+      <script>
+        function clicked(){
+          console.log(records);
+        }
+      </script>
