@@ -87,8 +87,6 @@ router.get("/cart/add-to-cart/:id", (req,res)=>{
 
 
   router.get("/deals/ordering/:id/:id1",  async (req, res) => {
-
-    console.log(req.params.id)
     let final;
     try{
     let pro = await New_pro1.findById(req.params.id);
@@ -116,8 +114,6 @@ router.get("/cart/add-to-cart/:id", (req,res)=>{
       quantity: 1,
 
     } ]
-    console.log(obj)
-
     let ok;
 
     try{

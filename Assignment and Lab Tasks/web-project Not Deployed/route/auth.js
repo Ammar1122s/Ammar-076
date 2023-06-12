@@ -108,9 +108,6 @@ router.get("/delete-profile/:id",gmailCheck,  async (req, res) =>{
 })
 
 
-
-
-
 router.post("/profile-edit1/:id", async (req,res) =>{
 
   let userObj = req.body;
@@ -143,8 +140,6 @@ router.post("/profile-edit1/:id", async (req,res) =>{
 router.get("/auth/google",passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
-  // Redirect the user after successful authentication
-  
 
 let userObj={
   _id:req.user.id,
