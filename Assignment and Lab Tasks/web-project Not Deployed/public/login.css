@@ -74,17 +74,17 @@
     margin-top: 20px;
     height: 50px;
     width: 220px;
-    border: 2px solid rgb(131, 131, 183);
+    border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 10px;
+    background-color:rgb(131, 181, 231);
 }
 
 .google_login a{
     text-decoration: none;
-    color: black;
-    font-weight: bold;
+    color: white;
 }
 
 
